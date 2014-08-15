@@ -1,0 +1,33 @@
+%div.row
+  %h3= link_to organization.name, organization
+  %div.row
+    %div.small-9.columns
+      %strong Slogan:
+      = organization.slogan
+  %div.row
+    %div.small-4.columns
+      %div.row
+        %div.small-4.columns
+          %strong 
+            %abbr{:title => "Power & Influence"}P/I:
+        %div.small-8.columns.end
+          = ptraits(organization.strength)
+          \/
+          = ptraits(organization.agility)
+      %div.row
+        %div.small-4.columns
+          %strong Morale:
+        %div.small-8.columns.end
+          = ptraits(organization.vigor)
+      %div.row
+        %div.small-4.columns
+          %strong Resist:
+        %div.small-8.columns.end
+          = ptraits(organization.toughness)
+      %div.row
+        %div.small-4.columns
+          %strong Notice:
+        %div.small-8.columns.end
+          = ptraits(organization.notice)
+    %div.small-8.columns.dev
+      = show_alignments(organization)

@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813234938) do
+ActiveRecord::Schema.define(version: 20140815005542) do
+
+  create_table "actions", force: true do |t|
+    t.integer  "attacker_id"
+    t.integer  "defender_id"
+    t.string   "type"
+    t.datetime "resolved_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "actions", ["attacker_id"], name: "index_actions_on_attacker_id"
+  add_index "actions", ["defender_id"], name: "index_actions_on_defender_id"
+
+  create_table "organizations", force: true do |t|
+    t.string   "name"
+    t.string   "slogan"
+    t.integer  "strength"
+    t.integer  "fight"
+    t.integer  "notice"
+    t.integer  "vigor"
+    t.integer  "toughness"
+    t.integer  "agility"
+    t.integer  "wounds"
+    t.datetime "manipulated_until"
+    t.datetime "guarded_until"
+    t.integer  "cp"
+    t.integer  "leaders"
+    t.integer  "cadre"
+    t.integer  "recruits"
+    t.integer  "secrecy"
+    t.integer  "wealth"
+    t.integer  "income"
+    t.string   "type"
+    t.integer  "kratos"
+    t.integer  "reverence"
+    t.integer  "sector"
+    t.integer  "law"
+    t.integer  "zeal"
+    t.integer  "odd"
+    t.integer  "personal"
+    t.integer  "economic"
+    t.integer  "political"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

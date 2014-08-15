@@ -13,5 +13,7 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+      %div.row
+        %div.large-12.columns.centered-text
+          = render 'layouts/messages'
+          = yield

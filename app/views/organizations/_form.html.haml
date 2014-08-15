@@ -1,0 +1,24 @@
+= simple_form_for(@organization) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :slogan
+    = f.input :control
+    = f.input :wealth
+    = f.input :income
+    = f.input :power
+    = f.input :inflluence
+    = f.input :morale
+    = f.input :security
+    = f.input :orthodoxy
+    = f.input :violence
+    = f.input :slant
+    = f.input :authority
+    = f.input :sector
+    = f.input :criminality
+    = f.input :zeal
+    = f.input :strangeness
+
+  .form-actions
+    = f.button :submit

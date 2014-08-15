@@ -1,0 +1,50 @@
+%p#notice= notice
+
+%h1
+  Organization:
+  = @organization.name
+
+%p
+  %b Slogan:
+  = @organization.slogan
+
+%p= show_alignments(@organization)
+
+%div.row
+  %div.small-8.columns
+    %table{:width => '100%'}
+      %tr
+        %th Power
+        %td= "#{@organization.strength}"
+        %th{:colspan=>2} Points
+        %td= @organization.cp
+      %tr
+        %th Income
+        %td= @organization.income + 3
+        %td= link_to "Inc.", "#"
+        %td= link_to "Dec.", "#"
+      %tr
+        %th Wealth
+        %td= @organization.wealth
+        %td= link_to "Inc.", "#"
+        %td= link_to "Dec.", "#"
+      %tr
+        %th &nbsp;
+        %th -3
+        %th -2
+        %th -1
+        %th 0
+        %th 1
+        %th 2
+        %th 3
+        %th &nbsp;
+      = starTrait(reverence(-3),reverence(3),@organization.reverence)
+      = starTrait(kratos(-3),kratos(3),@organization.kratos)
+      = starTrait(sector(-3),sector(3),@organization.sector)
+      = starTrait(law(-3),law(3),@organization.law)
+      = starTrait(zeal(-3),zeal(3),@organization.zeal)
+      = starTrait(odd(-3),odd(3),@organization.odd)
+
+= link_to 'Edit', edit_organization_path(@organization)
+\|
+= link_to 'Back', organizations_path

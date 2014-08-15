@@ -1,0 +1,1 @@
+json.extract! @organization, :id, :name, :slogan, :control, :wealth, :income, :power, :inflluence, :morale, :security, :orthodoxy, :violence, :slant, :authority, :sector, :criminality, :zeal, :strangeness, :created_at, :updated_at
